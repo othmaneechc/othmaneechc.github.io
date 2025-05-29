@@ -157,3 +157,65 @@
 		});
 
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if HorizontalTimeline function is available (include CodyHouse JS script before this, if needed)
+    if (typeof HorizontalTimeline === "function") {
+        new HorizontalTimeline(document.getElementById('education'));
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-button.next');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    
+    // Clone first and last slides for infinite effect
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
+    
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+    
+    let currentIndex = 1;
+    let isTransitioning = false;
+    
+    // Initial position
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    function slideNext() {
+        if (isTransitioning) return;
+        currentIndex++;
+        transition();
+    }
+    
+    function slidePrev() {
+        if (isTransitioning) return;
+        currentIndex--;
+        transition();
+    }
+    
+    function transition() {
+        isTransitioning = true;
+        track.style.transition = 'transform 0.5s ease-in-out';
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+    track.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        if (currentIndex === slides.length + 1) {
+            track.style.transition = 'none';
+            currentIndex = 1;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        if (currentIndex === 0) {
+            track.style.transition = 'none';
+            currentIndex = slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    });
+    
+    nextButton.addEventListener('click', slideNext);
+    prevButton.addEventListener('click', slidePrev);
+});
