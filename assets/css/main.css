@@ -2618,7 +2618,7 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #01365c;
+			background-color: #2d83c0;
 			color: #ffffff !important;
 		}
 
@@ -3405,7 +3405,7 @@ input, select, textarea {
 			position: absolute;
 			top: 50%;
 			transform: translateY(-20%);
-			background: rgba(1, 54, 92, 0.8);
+			background: #2d83c0;
 			color: white;
 			border: none;
 			width: 40px;
@@ -3439,7 +3439,7 @@ input, select, textarea {
 			content: '';
 			position: absolute;
 			width: 3px;
-			background: #01365C;
+			background: #2d83c0;
 			top: 0;
 			bottom: 0;
 			left: 130px;  /* Moved the line to align with the dots */
@@ -3524,6 +3524,14 @@ input, select, textarea {
 			}
 		  }
 
-		  strong, ul.actions li a {
-			color: #01365c
+		 #teaching il, ul.actions li a {
+			color: #125382
+		  }
+
+		  #publications i{
+			color: #2d83c0;
+		  }
+
+		  #publications a{
+			color: #006dba;
 		  }
