@@ -2736,7 +2736,7 @@ input, select, textarea {
 			-webkit-flex-shrink: 0;
 			-ms-flex-shrink: 0;
 			flex-shrink: 0;
-			padding: 3em;
+			padding: 1em;
 		}
 
 			#header > header .avatar {
@@ -2763,7 +2763,7 @@ input, select, textarea {
 			flex-shrink: 0;
 			bottom: 0;
 			left: 0;
-			padding: 2em;
+			padding: 1em;
 			width: 100%;
 		}
 
@@ -2887,7 +2887,7 @@ input, select, textarea {
 			}
 
 				#header > header {
-					padding: 2em;
+					padding: 1em;
 				}
 
 				#header > footer {
@@ -3186,7 +3186,7 @@ input, select, textarea {
 			}
 
 				#header > header {
-					padding: 2em;
+					padding: 1em;
 				}
 
 					#header > header .avatar {
@@ -3209,7 +3209,7 @@ input, select, textarea {
 		/* Main */
 
 			#main > section > .container {
-				padding: 2em 0 0 0;
+				padding: 1em 0 0 0;
 			}
 
 		/* Footer */
