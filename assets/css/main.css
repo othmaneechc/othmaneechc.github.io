@@ -3363,7 +3363,7 @@ input, select, textarea {
 		}
 
 		#carousel p {
-			font-size: 1rem;
+			/* font-size: 1rem; */
 			margin: 0 0 1.5em 0;			
 		}
 		.carousel-container {
@@ -3426,6 +3426,39 @@ input, select, textarea {
 		
 		.carousel-button.next {
 			right: 0;
+		}
+
+		/* News Section */
+		#news .news-list {
+			list-style: none;
+			padding: 0;
+		}
+
+		#news .news-list li {
+			margin-bottom: 1.5em;
+			padding: 1em 1.5em;
+			background: #f8f9fa;
+			border-left: 4px solid #01365C;
+			border-radius: 4px;
+		}
+
+		#news .news-list li:last-child {
+			margin-bottom: 0;
+		}
+
+		#news .news-list strong {
+			color: #01365C;
+		}
+
+		#news .news-list a {
+			color: #01365C;
+			text-decoration: none;
+			border-bottom: 1px dotted #01365C;
+		}
+
+		#news .news-list a:hover {
+			color: #2d83c0;
+			border-bottom: 1px solid #2d83c0;
 		}
 
 		#education .timeline {
