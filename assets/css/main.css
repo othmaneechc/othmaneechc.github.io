@@ -36,12 +36,12 @@ body {
 /* Scales down the entire layout on large screens for a default zoom-out feel */
 @media (min-width: 1025px) {
 	html {
-		zoom: 0.7;
+		zoom: 0.85;
 	}
 
 	@supports not (zoom: 1) {
 		body {
-			transform: scale(0.7);
+			transform: scale(0.85);
 			transform-origin: top center;
 		}
 	}
@@ -2216,6 +2216,7 @@ input, select, textarea {
 			display: block;
 			height: 25em;
 			border-radius: 0;
+			margin-bottom: 1em;
 		}
 
 			.image.main img {
@@ -2917,7 +2918,7 @@ input, select, textarea {
 		/* Main */
 
 			#main > section > .container {
-				padding: 1em 0 0 0;
+				padding: 1em 0 1em 0;
 			}
 
 	}
@@ -3223,7 +3224,7 @@ input, select, textarea {
 		/* Main */
 
 			#main > section > .container {
-				padding: 1em 0 0 0;
+				padding: 1em 0 1em 0;
 			}
 
 		/* Footer */
