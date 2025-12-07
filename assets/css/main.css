@@ -33,6 +33,20 @@ body {
 	line-height: 1;
 }
 
+/* Scales down the entire layout on large screens for a default zoom-out feel */
+@media (min-width: 1025px) {
+	html {
+		zoom: 0.7;
+	}
+
+	@supports not (zoom: 1) {
+		body {
+			transform: scale(0.7);
+			transform-origin: top center;
+		}
+	}
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -130,7 +144,7 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2.25em 0;
+		margin: 0 0 1em 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -196,7 +210,7 @@ input, select, textarea {
 	blockquote {
 		border-left: solid 8px #e4e4e4;
 		font-style: italic;
-		margin: 0 0 2.25em 0;
+		margin: 0 0 1em 0;
 		padding: 0.5em 0 0.5em 2em;
 	}
 
@@ -213,7 +227,7 @@ input, select, textarea {
 	pre {
 		font-family: "Source Code Pro", monospace;
 		font-size: 0.9em;
-		margin: 0 0 2.25em 0;
+		margin: 0 0 1em 0;
 	}
 
 		pre code {
@@ -1709,7 +1723,7 @@ input, select, textarea {
 	.container {
 		margin: 0 auto;
 		max-width: calc(100% - 4.5em);
-		width: 45em;
+		width: 65em;
 	}
 
 		.container.xsmall {
@@ -1799,7 +1813,7 @@ input, select, textarea {
 /* Form */
 
 	form {
-		margin: 0 0 2.25em 0;
+		margin: 0 0 1em 0;
 	}
 
 	label {
@@ -2178,7 +2192,7 @@ input, select, textarea {
 
 		.image.fit {
 			display: block;
-			margin: 0 0 2.25em 0;
+			margin: 0 0 1em 0;
 			width: 100%;
 		}
 
@@ -2212,7 +2226,7 @@ input, select, textarea {
 
 	ol {
 		list-style: decimal;
-		margin: 0 0 2.25em 0;
+		margin: 0 0 1em 0;
 		padding-left: 1.25em;
 	}
 
@@ -2222,7 +2236,7 @@ input, select, textarea {
 
 	ul {
 		list-style: disc;
-		margin: 0 0 2.25em 0;
+		margin: 0 0 1em 0;
 		padding-left: 1em;
 	}
 
@@ -2246,7 +2260,7 @@ input, select, textarea {
 				}
 
 	dl {
-		margin: 0 0 2.25em 0;
+		margin: 0 0 1em 0;
 	}
 
 /* Actions */
@@ -2444,7 +2458,7 @@ input, select, textarea {
 	}
 
 	table {
-		margin: 0 0 2.25em 0;
+		margin: 0 0 1em 0;
 		width: 100%;
 	}
 
@@ -2829,7 +2843,7 @@ input, select, textarea {
 	}
 
 		#main > section > .container {
-			padding: 3em 0 4em 0;
+			padding: 2em 0 3em 0;
 		}
 
 		#main > section:first-child {
@@ -2903,7 +2917,7 @@ input, select, textarea {
 		/* Main */
 
 			#main > section > .container {
-				padding: 2em 0 2em 0;
+				padding: 1em 0 0 0;
 			}
 
 	}
@@ -3164,7 +3178,7 @@ input, select, textarea {
 
 			.features article .image {
 				display: block;
-				margin: 0 0 2.25em 0;
+				margin: 0 0 1em 0;
 				padding-right: 0;
 				width: 100%;
 			}
@@ -3268,7 +3282,7 @@ input, select, textarea {
 		/* List */
 
 			ul.actions {
-				margin: 0 0 2.25em 0;
+				margin: 0 0 1em 0;
 			}
 
 				ul.actions li {
@@ -3319,7 +3333,7 @@ input, select, textarea {
 			margin: 0 0 0 0;
 		}
 		#education .timeline-item {
-			/* padding: 3em 2em 2em; */
+			padding-bottom: 1em;
 			position: relative;
 			color: rgba(black, .7);
 			/* border-left: 2px solid black; */
@@ -3362,70 +3376,101 @@ input, select, textarea {
 			}
 		}
 
-		#carousel p {
-			/* font-size: 1rem; */
-			margin: 0 0 1.5em 0;			
+		#projects .project-grid {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 2rem;
+			margin: 2.5rem 0 1rem;
 		}
-		.carousel-container {
+
+		#projects .project-card {
+			background: #fff;
+			border-radius: 18px;
+			box-shadow: 0 16px 30px rgba(1, 54, 92, 0.12);
+			padding: 1.5rem;
+			display: flex;
+			gap: 1.4rem;
+			align-items: stretch;
 			position: relative;
-			padding: 0 60px;
-			margin: 2em 0;
+			transition: transform 0.25s ease, box-shadow 0.25s ease;
 		}
-		
-		.carousel-track-container {
+
+		#projects .project-card::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: 18px;
+			border: 1px solid rgba(1, 54, 92, 0.08);
+			pointer-events: none;
+		}
+
+		#projects .project-card:hover {
+			transform: translateY(-8px);
+			box-shadow: 0 22px 40px rgba(1, 54, 92, 0.18);
+		}
+
+		#projects .project-card .image {
+			flex: 0 0 38%;
+			border-radius: 14px;
+			overflow: hidden;
+			min-height: 190px;
+			background: #f1f5f9;
+		}
+
+		#projects .project-card .image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		#projects .project-card .inner {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			gap: 0.8rem;
+			text-align: left;
+		}
+
+		#projects .project-card .inner a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		#projects .project-card h4 {
+			margin: 0;
+			font-size: 1.15em;
+		}
+
+		#projects .project-card p {
+			margin: 0;
+			color: #4b5563;
+			display: -webkit-box;
+			line-clamp: 4;
+			-webkit-line-clamp: 4;
+			-webkit-box-orient: vertical;
 			overflow: hidden;
 		}
-		
-		.carousel-track {
-			display: flex;
-			transition: transform 0.5s ease-in-out;
+
+		@media screen and (max-width: 1100px) {
+			#projects .project-grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
 		}
-		
-		.carousel-track.features article {
-			flex: 0 0 100%;
-			min-width: 100%;
-			margin: 0;
-			/* padding: 2em; */
-		}
-		
-		.carousel-track.features article .image {
-			display: inline-block;
-			padding-right: 1em;
-			vertical-align: middle;
-			width: 40%;
-		}
-		
-		.carousel-track.features article .inner {
-			display: inline-block;
-			vertical-align: middle;
-			width: 55%;
-		}
-		
-		.carousel-button {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-20%);
-			background: #2d83c0;
-			color: white;
-			border: none;
-			width: 40px;
-			height: 40px;
-			border-radius: 50%;
-			cursor: pointer;
-			z-index: 10;
-			transition: background-color 0.3s;
-		}
-		
-		.carousel-button:hover {
-			background: rgb(1, 54, 92);
-		}
-		
-		.carousel-button.prev {
-			left: 0;
-		}
-		
-		.carousel-button.next {
-			right: 0;
+
+		@media screen and (max-width: 640px) {
+			#projects .project-grid {
+				grid-template-columns: 1fr;
+			}
+
+			#projects .project-card {
+				flex-direction: column;
+			}
+
+			#projects .project-card .image {
+				flex: none;
+				width: 100%;
+				min-height: 220px;
+			}
 		}
 
 		/* News Section */
@@ -3435,8 +3480,8 @@ input, select, textarea {
 		}
 
 		#news .news-list li {
-			margin-bottom: 1.5em;
-			padding: 1em 1.5em;
+			margin-bottom: 0.8em;
+			padding: 0.2em 0.5em;
 			background: #f8f9fa;
 			border-left: 4px solid #01365C;
 			border-radius: 4px;
@@ -3463,103 +3508,208 @@ input, select, textarea {
 
 		#education .timeline {
 			position: relative;
-			max-width: 800px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: 2rem;
+			/* padding: 2.5rem 1rem 0; */
 			margin: 0 auto;
-			padding: 10px 0;
+			/* max-width: 1000px; */
+			overflow-x: auto;
 		}
-		
+
 		#education .timeline::before {
 			content: '';
 			position: absolute;
-			width: 3px;
+			top: 40px;
+			left: 0;
+			right: 0;
+			height: 3px;
 			background: #2d83c0;
-			top: 0;
-			bottom: 0;
-			left: 130px;  /* Moved the line to align with the dots */
 			border-radius: 2px;
+			transform: translateY(-50%);
 		}
-		
+
 		#education .timeline-item {
 			position: relative;
-			/* margin: 40px 0; */
-			padding-left: 160px;  /* Increased padding to make room for dates */
+			flex: 1 0 200px;
+			padding-top: 3.5rem;
+			text-align: center;
 		}
-		
+
 		#education .timeline-item .date {
-			position: absolute;
-			left: 0;
-			top: 50%;
-			transform: translateY(-50%);
-			width: 110px;  /* Increased width for dates */
-			text-align: right;
+			display: block;
 			font-weight: 600;
 			color: #01365C;
-			font-size: 0.9em;
-			padding-right: 15px;  /* Added padding between date and line */
+			font-size: 0.95em;
+			margin-bottom: 1rem;
 		}
-		
+
 		#education .timeline-item::after {
 			content: '';
 			position: absolute;
-			left: 124px;  /* Aligned dots with the line */
-			top: 50%;
-			transform: translateY(-50%);
+			top: 40px;
+			left: 50%;
+			transform: translate(-50%, -50%);
 			width: 16px;
 			height: 16px;
 			background: #fff;
 			border: 3px solid #01365C;
 			border-radius: 50%;
-			/* box-shadow: 0 0 0 3px rgba(1, 54, 92, 0.1); */
+			z-index: 2;
 		}
-		
+
 		#education .timeline-item .content {
 			background: #fff;
-			padding: 15px;
+			/* padding: 15px; */
 			border-radius: 6px;
-			/* box-shadow: 0 3px 8px rgba(0,0,0,0.05); */
+			text-align: center;
 		}
-		
-		/* Mobile responsiveness */
-		@media screen and (max-width: 736px) {
+
+		#education .timeline-item .content h4 {
+			font-size: 1.05em;
+			margin-bottom: 0.35em;
+		}
+
+		#education .timeline-item .content .degree,
+		#education .timeline-item .content p {
+			font-size: 0.95em;
+			line-height: 1.4;
+		}
+
+		@media screen and (max-width: 900px) {
+			#education .timeline {
+				flex-direction: column;
+				padding: 10px 0;
+				overflow: visible;
+				gap: 1.5rem;
+			}
+
 			#education .timeline::before {
-				left: 40px;
-			}
-			
-			#education .timeline-item {
-				padding-left: 80px;
-			}
-			
-			#education .timeline-item .date {
-				left: 70px;
-				top: -25px;  /* Move date above the content on mobile */
+				top: 0;
+				left: 30px;
+				right: auto;
+				bottom: 0;
+				width: 3px;
 				transform: none;
-				text-align: left;
-				width: auto;
 			}
-			
+
+			#education .timeline-item {
+				text-align: left;
+				padding: 0 0 0 70px;
+			}
+
 			#education .timeline-item::after {
-				left: 34px;
+				left: 24px;
+				top: 0.5em;
+				transform: none;
+			}
+
+			#education .timeline-item .content {
+				text-align: left;
+			}
+
+			#education .timeline-item .date {
+				text-align: left;
+				margin-bottom: 0.3rem;
 			}
 		}
 
 		@media screen and (max-width: 480px) {
-			/* Hide dates in the education timeline */
-			#education .timeline-item .date {
-			  display: none;
+			#education .timeline::before {
+				left: 18px;
 			}
-			
-			/* Hide project images in the carousel */
+
+			#education .timeline-item {
+				padding-left: 55px;
+			}
+
+			#education .timeline-item .date {
+				display: none;
+			}
+
 			#projects .carousel-track.features article .image {
-			  display: none;
+				display: none;
 			}
 			.carousel-track.features article .inner {
 				width: 95%;
 			}
-		  }
+		}
 
-		 #teaching il, ul.actions li a {
-			color: #125382
-		  }
+		#teaching .teaching-intro {
+			max-width: 720px;
+			margin: 0 auto 2rem;
+			font-size: 1.05em;
+			line-height: 1.6;
+			color: #4b5563;
+		}
+
+		#teaching .teaching-cards {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+			gap: 1.5rem;
+		}
+
+		#teaching .teaching-card {
+			background: #fff;
+			border-radius: 16px;
+			padding: 1.5rem;
+			box-shadow: 0 16px 30px rgba(1, 54, 92, 0.08);
+			border: 1px solid rgba(1, 54, 92, 0.08);
+			height: 100%;
+		}
+
+		#teaching .teaching-card header h4 {
+			margin: 0 0 0.35rem;
+			font-size: 1.1em;
+			color: #01365C;
+		}
+
+		#teaching .teaching-card header p {
+			margin: 0;
+			font-size: 0.95em;
+			color: #6b7280;
+		}
+
+		#teaching .course-list {
+			margin: 1rem 0 0;
+			padding: 0;
+			list-style: none;
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0.75rem 1rem;
+		}
+
+		#teaching .course-list li {
+			font-size: 0.95em;
+			line-height: 1.4;
+			color: #374151;
+			padding: 0.5rem 0.6rem;
+			border-radius: 10px;
+			background: #f8fafc;
+			border: 1px solid rgba(1, 54, 92, 0.08);
+		}
+
+		#teaching .course-list strong {
+			color: #125382;
+		}
+
+		#teaching .teaching-footnote {
+			margin-top: 1.75rem;
+			font-size: 0.95em;
+			color: #4b5563;
+			text-align: center;
+		}
+
+		@media screen and (max-width: 640px) {
+			#teaching .course-list {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		ul.actions li a {
+			color: #125382;
+		}
 
 		  #publications i{
 			color: #2d83c0;
