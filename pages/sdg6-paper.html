@@ -16,9 +16,9 @@
 			</div>
 
 			<header class="hero">
-				<h1>Monitoring Access to Piped Water and Sanitation Infrastructure In Africa at Disaggregated Scales using Satellite Imagery and Self Supervised Learning</h1>
+				<h1>Seeing SDG 6 from space: local-scale monitoring of piped water and sewage system access across Africa using satellite imagery and self-supervised learning</h1>
 				<p class="authors">
-					Othmane Echchabi<sup>1,2* </sup>, Aya Lahlou <sup>3*</sup>, Nizar Talty <sup>4</sup>, Josh Malcolm Manto <sup>4</sup>, Tongshu Zheng <sup>4</sup>, Ka Leung Lam <sup>4&#8224;</sup>
+					Othmane Echchabi<sup>1,2,4* </sup>, Aya Lahlou <sup>3,4*</sup>, Nizar Talty <sup>4</sup>, Josh Malcolm Manto <sup>4</sup>, Tongshu Zheng <sup>4</sup>, Ka Leung Lam <sup>4&#8224;</sup>
 				</p>
 				<p class="venue"><sup>*</sup>Equal contribution  &nbsp;|&nbsp; <sup>&#8224;</sup> Corresponding author</p>
 				<p class="affiliations"><sup>1</sup> McGill University &nbsp;|&nbsp; <sup>2</sup> Mila - AI Quebec Institute &nbsp;|&nbsp; <sup>3</sup> Columbia University &nbsp;|&nbsp; <sup>4</sup> Duke Kunshan University</p>
@@ -39,27 +39,18 @@
 			<section class="section">
 				<h2>Abstract</h2>
 				<p>
-					Tracking access to safely managed drinking water and sanitation (SDG 6) is
-                    hindered in many regions by sparse, costly, or delayed survey and census data.
-                    We propose a remote-sensing framework that pairs household survey labels with
-                    Sentinel-2 satellite imagery (Drusch et al., 2012) and self-supervised Vision
-                    Transformer embeddings to learn representations of the built environment without
-                    dense task-specific labels. We evaluate a k-NN classifier on frozen embeddings to
-                    predict (i) piped water access and (ii) sanitation/sewage access at survey locations,
-                    and use high-resolution population maps to produce population-weighted national
-                    estimates. On held-out validation splits, our best configurations reach 84.19%
-                    accuracy for piped water and 87.17% accuracy for sanitation.
+					Access to drinking water and sanitation remains highly unequal, while SDG 6 monitoring still relies on costly, infrequent, and spatially uneven surveys with substantial reporting delays. This study develops a scalable remote-sensing framework to estimate piped water and sewage system access at approximately 2.56 km resolution using Sentinel-2 imagery, Afrobarometer survey responses, 30 m population data, and DINO self-supervised Vision Transformer features, achieving AUROC values of 91.54% for piped water and 93.24% for sewage access. Across 50 African countries and a Nigeria case study of 767 LGAs, the framework aligns strongly with JMP statistics, captures fine-scale environmental inequality, and provides low-cost, spatially detailed evidence for SDG 6 monitoring, infrastructure targeting, and environmental equity assessment.
 				</p>
 			</section>
 
 			<section class="section" id="citation">
-<h2>BibTeX</h2>
-<pre>@article{echchabi2025sdg6,
-title   = {Monitoring Access to Piped Water and Sanitation Infrastructure In Africa at Disaggregated Scales using Satellite Imagery and Self Supervised Learning},
-author  = {Echchabi, Othmane and Lahlou, Aya and Talty, Nizar and Manto, Josh Malcolm and Zheng, Tongshu and Lam, Ka Leung},
-journal = {arXiv preprint arXiv:2411.19093},
-year    = {2026}
-}</pre>
+				<h2>BibTeX</h2>
+				<pre>@article{echchabi2025sdg6,
+				title   = {Monitoring Access to Piped Water and Sanitation Infrastructure In Africa at Disaggregated Scales using Satellite Imagery and Self Supervised Learning},
+				author  = {Echchabi, Othmane and Lahlou, Aya and Talty, Nizar and Manto, Josh Malcolm and Zheng, Tongshu and Lam, Ka Leung},
+				journal = {arXiv preprint arXiv:2411.19093},
+				year    = {2026}
+				}</pre>
 			</section>
 
 			<section class="section">
@@ -71,7 +62,7 @@ year    = {2026}
 
 			            <section class="section">
 				<h2>CarbonClever App Photos</h2>
-				<div class="three-photo-grid">
+				<div class="one-photo-grid">
 					<div class="photo-box">
 						<img src="../images/sdg6/nigeria_hotspots_composite_abcd.png" alt="Initial field setup for SpeedTransformer data collection" />
 				</div>
