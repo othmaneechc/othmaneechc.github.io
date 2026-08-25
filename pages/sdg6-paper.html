@@ -25,6 +25,7 @@
 
 				<div class="button-row">
 					<a class="btn primary" href="https://arxiv.org/abs/2411.19093" target="_blank" rel="noopener noreferrer">arXiv</a>
+					<a class="btn primary" href="https://doi.org/10.1016/j.wroa.2026.100600" target="_blank" rel="noopener noreferrer">Journal</a>
 					<a class="btn ghost" href="https://arxiv.org/pdf/2411.19093" target="_blank" rel="noopener noreferrer">PDF</a>
 					<a class="btn ghost" href="https://github.com/othmaneechc/SDG6-Tracker" target="_blank" rel="noopener noreferrer">Code</a>
 				</div>
@@ -47,7 +48,7 @@
 			<section class="section">
 				<h2>Abstract</h2>
 				<p>
-					Access to drinking water and sanitation remains highly unequal, while SDG 6 monitoring still relies on costly, infrequent, and spatially uneven surveys with substantial reporting delays. This study develops a scalable remote-sensing framework to estimate piped water and sewage system access at approximately 2.56 km resolution using Sentinel-2 imagery, Afrobarometer survey responses, 30 m population data, and DINO self-supervised Vision Transformer features, achieving AUROC values of 91.54% for piped water and 93.24% for sewage access. Across 50 African countries and a Nigeria case study of 767 LGAs, the framework aligns strongly with JMP statistics, captures fine-scale environmental inequality, and provides low-cost, spatially detailed evidence for SDG 6 monitoring, infrastructure targeting, and environmental equity assessment.
+					Access to drinking water and sanitation is essential, yet monitoring progress toward Sustainable Development Goal 6 remains constrained by costly, infrequent, and spatially uneven household surveys, particularly in data-scarce regions. We develop a scalable remote-sensing framework to estimate the area-level presence of piped water and sewage systems across Africa at 2.56 km resolution. The framework combines Sentinel-2 imagery, enumerator-observed system-presence records from Afrobarometer enumeration areas, 30 m population data, and Vision Transformer representations learned through DINO self-supervised learning. On held-out enumeration areas, the best models achieve AUROCs of 91.54% for piped water and 93.24% for sewage. Under leave-one-region-out cross-validation, performance declines to 75.5% and 78.7%, respectively, indicating challenges in transferring models to unsampled regions. Applied across 50 African countries, population-weighted estimates closely track WHO/UNICEF Joint Monitoring Programme benchmarks for piped water access (R2=0.92) and show meaningful agreement with safely managed sanitation for sewage (R2=0.72). In countries without Afrobarometer coverage, population-weighted mean absolute errors are 9.5% for piped water and 10.7% for sewage. Predictions for 767 Local Government Areas in Nigeria reveal substantial subnational inequality: in the most affected areas, as many as 1.187 million people live where no piped water system is present and 1.577 million where no sewage system is present. These findings show that self-supervised learning with freely available satellite imagery can complement household surveys and support SDG 6 monitoring, infrastructure planning, and environmental equity assessment.
 				</p>
 			</section>
 
